@@ -3,6 +3,8 @@ spawn = require('child_process').spawn
 path = require('path')
 phantomjs = require('phantomjs')
 
+console.log(phatomjs.path)
+
 # 
 # phantomjs version 1.8.1 and later should work. Ubuntu has some problems when trying to buffer to /dev/stdout
 # 
