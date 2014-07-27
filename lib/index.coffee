@@ -1,10 +1,8 @@
 fs = require('fs')
 spawn = require('child_process').spawn
 path = require('path')
-phantomjs = require('phantomjs')
 
-console.log('seethis..phantomjs test:', phantomjs)
-console.log('seethis..phantomjs test path:', phantomjs.path)
+phantomPath = '/home/rickgoz/local/sbin/phantomjs'
 
 # 
 # phantomjs version 1.8.1 and later should work. Ubuntu has some problems when trying to buffer to /dev/stdout
@@ -26,7 +24,7 @@ exports.create = (string, options, callback) ->
     options = {}
 
   return callback(new Error("Can't create pdf without content")) unless string?.length
-  child = spawn(phantomjs.path, [options.script || script, string.length, JSON.stringify(options)])
+  child = spawn(phantomPath, [options.script || script, string.length, JSON.stringify(options)])
   stdout = []
   stderr = []
 
